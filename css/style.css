@@ -12003,7 +12003,7 @@ textarea.form-control-lg {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("images/fundo.png");
+  background-image: url("images/fundo.webp");
   background-size: cover;
   background-position: center;
   filter: blur(10px);
