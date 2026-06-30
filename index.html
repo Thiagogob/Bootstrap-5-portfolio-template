@@ -23,19 +23,17 @@
 <!-- Event snippet for eis q chamou no zap conversion page
 In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
+function gtag_report_conversion() {
+  // Fire the Google Ads conversion for a WhatsApp button click.
+  // The link opens WhatsApp in a new tab (target="_blank"), so we let the
+  // default click proceed and return true — the visitor always reaches
+  // WhatsApp even if tracking is blocked, while the conversion still records.
   gtag('event', 'conversion', {
       'send_to': 'AW-17099156210/K2EtCMyCztAaEPLVwdk_',
       'value': 0.0,
-      'currency': 'BRL',
-      'event_callback': callback
+      'currency': 'BRL'
   });
-  return false;
+  return true;
 }
 </script>
 
@@ -97,6 +95,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
         </ul>
         <a href="https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica." target="_blank"
+          onclick="gtag_report_conversion()"
           style="text-decoration: none;">
           <button type="button" class="rounded-pill btn-rounded"
             style="white-space: nowrap; display: inline-flex; align-items: center; gap: 0.5rem;">
@@ -135,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </span>
           </h1>
           <a href='https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica.' target="_blank"
-            onclick="return gtag_report_conversion('https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica.')"
+            onclick="gtag_report_conversion()"
             style="text-decoration: none;">
             <button type="button" class="btn btn-success rounded-pill d-flex align-items-center px-4 gap-3">
               <span class="text-white fw-bold">Plantão Criminal 24 horas</span>
@@ -219,7 +218,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <a href="https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica." target="_blank" style="text-decoration: none;"
-          onclick="return gtag_report_conversion('https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica.')">
+          onclick="gtag_report_conversion()">
           <button type="button" class="rounded-pill btn-rounded border-primary">Converse com um especialista
             <span style="
           background-color: #25D366; /* verde do WhatsApp */
@@ -267,7 +266,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           
           
           <a href="https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica." target="_blank" style="text-decoration: none;"
-          onclick="return gtag_report_conversion('https://wa.me/554299978160?text=Olá!%20Gostaria%20de%20ajuda%20jurídica.')">
+          onclick="gtag_report_conversion()">
           <button type="button" class="rounded-pill btn-rounded border-primary">Converse com um especialista
             <span style="
           background-color: #25D366; /* verde do WhatsApp */
